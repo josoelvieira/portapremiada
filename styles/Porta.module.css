@@ -2,6 +2,9 @@
     display: flex;
     width: var(--area-porta-largura);
     height: var(--area-porta-altura);
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
 }
 .estrutura{
     display: flex;
@@ -9,16 +12,47 @@
     border-left:  5px solid rgb(238, 72, 6);
     border-top:  5px solid rgb(238, 72, 6);
     border-right:  5px solid rgb(238, 72, 6);
+    width: 90%;
 }
 .porta {
+    position: relative;
     display: flex;
     flex-grow: 1;
     flex-direction: column;
     align-items: center;
     background-color: rgb(110, 53, 5);
     padding: 15px;
+    
 }
 .numero {
     font-size: 40px;
 
+}
+.macaneta{
+    height: 20px;
+    width: 20px;
+    background-color: rgb(238, 72, 6);
+    border-radius: 10px;
+    margin: 5px;
+    position: absolute;
+    top:155px;
+    left: 10px;
+}
+.chao{
+    height: 10px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.selecionada{
+    border: 5px solid rgb(255, 255, 0);
+    border-bottom: none;
+}
+.selecionada .numero {
+    color: rgb(255, 255, 0);
+}
+.selecionada .macaneta{
+    background-color: rgb(255, 255, 0);
+}
+.porta-aberta{
+    background-color: rgb(255, 255, 255);
 }

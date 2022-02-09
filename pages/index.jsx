@@ -5,11 +5,15 @@ import PortaModel from "../model/porta";
 
 export default function Home() {
   const [p1, setP1] = useState(new PortaModel(1));
+  const [texto, setTexto] = useState("");
+
 
   return (
     <div style={{display:'flex'}}>
-      <Porta porta={p1} />
-      <Porta porta={p2} />
+      <input type="text" value={texto} 
+      onChange={e => setTexto(e.target.value)} />
+      <Porta value={p1} />
+      
     </div>
   )
 }

@@ -13,6 +13,7 @@
     border-top:  5px solid rgb(238, 72, 6);
     border-right:  5px solid rgb(238, 72, 6);
     width: 90%;
+    background-color: rgba(0, 0, 0, 0.333);
 }
 .porta {
     position: relative;
@@ -53,6 +54,4 @@
 .selecionada .macaneta{
     background-color: rgb(255, 255, 0);
 }
-.porta-aberta{
-    background-color: rgb(255, 255, 255);
-}
+

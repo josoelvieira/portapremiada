@@ -1,5 +1,5 @@
 import styles from "../../../styles/jogo.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Porta from "../../../componets/Porta";
 import { atualizarPortas, criarPortas } from "../../../function/porta";
 import Link from "next/link";
@@ -8,7 +8,13 @@ import { useRouter } from "next/router"
 export default function telaDoJogo() {
     const router = useRouter()
 
-    const [portas, setPorta] = useState([]);
+    const [portas, setPortas] = useState([]);
+
+    useEffect(() => {
+        const portas = +router.query.portas
+        const temPresente = +router.query.temPresente
+        setPortas(criarPortas(portas, temPresente))
+    }, [router?.query])
 
     function renderizarPortas() {
         return portas.map((porta) => {
@@ -17,7 +23,7 @@ export default function telaDoJogo() {
                     key={porta.numero}
                     value={porta}
                     onChange={(novaPorta) =>
-                        setPorta(atualizarPortas(portas, novaPorta))
+                        setPortas(atualizarPortas(portas, novaPorta))
                     }
                 />
             );

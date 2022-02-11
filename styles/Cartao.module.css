@@ -1,0 +1,14 @@
+.cartao{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    margin:6px 3px;
+    font-size: 2rem;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.cartao input{
+    font-size: 20px;
+}

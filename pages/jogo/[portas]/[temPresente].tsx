@@ -18,7 +18,7 @@ export default function Jogo() {
         const qtdePortasValidas = portas >= 3 && portas <= 15
         const temPresenteValido = temPresente >= 1 && temPresente <= portas;
         setvalido(qtdePortasValidas && temPresenteValido)
-    },[portas])
+    },[portas, router.query.portas, router.query.temPresente])
 
     useEffect(() => {
         const portas = +router.query.portas
@@ -48,7 +48,7 @@ export default function Jogo() {
             </div>
             <div className={styles.botoes}>
             <Link href="/">
-                <button>Reniciar</button>
+                <a><button>Reniciar</button></a>
             </Link>
             </div>
         </div>

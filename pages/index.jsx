@@ -25,7 +25,10 @@ export default function Home() {
 
       <Cartao bgcolor="#28a085">
       <Link href={`/jogo/${qtdePortas}/${comPresente}`}>
+        <a>
         <h2 className={styles.link}>Iniciar</h2>
+
+        </a>
       
       </Link>
        </Cartao>

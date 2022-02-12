@@ -4,7 +4,7 @@ import Porta from "../../../componets/Porta";
 import { atualizarPortas, criarPortas } from "../../../function/porta";
 import Link from "next/link";
 import { useRouter } from "next/router"
-import { Http2ServerRequest } from "http2";
+
 
 export default function telaDoJogo() {
     const router = useRouter()

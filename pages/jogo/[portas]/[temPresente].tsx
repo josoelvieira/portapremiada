@@ -4,11 +4,21 @@ import Porta from "../../../componets/Porta";
 import { atualizarPortas, criarPortas } from "../../../function/porta";
 import Link from "next/link";
 import { useRouter } from "next/router"
+import { Http2ServerRequest } from "http2";
 
 export default function telaDoJogo() {
     const router = useRouter()
 
     const [portas, setPortas] = useState([]);
+    const [valido, setvalido] = useState(false)
+
+    useEffect(() =>{
+        const portas = +router.query.portas
+        const temPresente = +router.query.temPresente
+        const qtdePortasValidas = portas >= 3 && portas <= 15
+        const temPresenteValido = temPresente >= 1 && temPresente <= portas;
+        setvalido(qtdePortasValidas && temPresenteValido)
+    },[portas])
 
     useEffect(() => {
         const portas = +router.query.portas
@@ -32,7 +42,9 @@ export default function telaDoJogo() {
     return (
         <div className={styles.jogo}>
             <div className={styles.portas}>
-                {renderizarPortas()}
+                {valido ? renderizarPortas()
+                :
+                <h2>Valores invalidos</h2> }
             </div>
             <div className={styles.botoes}>
             <Link href="/">

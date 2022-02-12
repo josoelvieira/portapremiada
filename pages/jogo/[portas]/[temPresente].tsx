@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router"
 
 
-export default function TelaDoJogo() {
+export default function Jogo() {
     const router = useRouter()
 
     const [portas, setPortas] = useState([]);
